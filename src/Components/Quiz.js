@@ -7,7 +7,7 @@ const Quiz = () =>{
 
     const [current,setCurrent] = useState(0)
     const [selectChoice,setSelectChoice] = useState('')
-    const {score,setScore} = useContext(DataContext)
+    const {score,setScore,setAppState} = useContext(DataContext)
 
     useEffect(()=>{
         checkAnswer()
@@ -17,11 +17,23 @@ const Quiz = () =>{
         if(selectChoice !== ""){
             if(selectChoice === QuestionData[current].answer){
                 setScore(score+1)
+                nextQuestion()
             }
             else{
-                console.log('Not Correct T_T')
+                nextQuestion()
             }
         }
+    }
+
+    const nextQuestion = () =>{
+        setSelectChoice('') // clear state ก่อนไปข้อต่อไป
+        if(current === QuestionData.length-1){
+            setAppState('score')
+        }
+        else{
+            setCurrent(current+1)
+        }
+        
     }
     
     return(
