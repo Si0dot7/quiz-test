@@ -6,14 +6,18 @@
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  background: rgb(173, 185, 215);
+  background:linear-gradient(45deg,rgb(10, 0, 53),#324d88);
   min-height: 100vh;
+}
+
+.App h1{
+  color: white;
 }
 
 .menu , .quiz , .score{
   width: 500px;
   height: 500px;
-  background: rgb(91, 140, 204);
+  background:linear-gradient(180deg,rgb(66, 50, 214),#98a5ed);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -39,7 +43,7 @@ button:hover{
 }
 
 .quiz h1{
-  color:white;
+  color:rgb(0, 0, 0);
   margin-bottom: 20px;
 }
 
@@ -51,4 +55,8 @@ button:hover{
 .score h2{
   color: rgb(144, 10, 10);
   margin-bottom: 30px;
+}
+
+.menu h1{
+  color:black;
 }
